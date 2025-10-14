@@ -30,12 +30,12 @@
      var map = L.map('map').setView([8.359846405838628, 124.86841022778252], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-      var marker = L.marker([51.5, -0.09]).addTo(map);
-          marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+      var marker = L.marker([8.3593, 124.8691]).addTo(map);
+          marker.bindPopup("</b>This is the ICS Laboratory 1, yipee<br>This is the ICS laboratory 1").openPopup();
 
 function initMap(){
       const map = L.map('map').setView([8.359846405838628, 124.86841022778252], 17);
@@ -44,10 +44,24 @@ function initMap(){
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
         console.log("Map Loaded" + Date());
+
+        fetch(maDatUrl)
+          .then(response => response.json())    
+          .then(date => {
+            data.foreach(pin=>{
+                const marker = L.marker([pin.lat, pin.lng]).addTo(map);
+                marker.bindPopup('${pin.name}<br>${pin.description}');
+                console.log('${pin.name} Loaded' + Date());
+            });
+          
+          })
+
+          .catch(err=>console.error('Error loading JSON:',err));
+        
 }
    document.addEventListener('DOMContentLoaded',()=>{
  initMap('map');
    });
-   
+
  </script>
   </html>
