@@ -5,8 +5,8 @@
         "description":"This is the ICS Laboratory 1, yipee",
         "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrx3ghaPR0J_QVQmPTTYYzI7LFtNUTTv2Gw&s",
         "lat":8.3593,
-        "lng":124.8691
-
+        "lng":124.8691,
+        "locationType":"Laboratory"
        
 
         
@@ -17,6 +17,7 @@
         "description":"",
         "img":"https://www.teachhub.com/wp-content/uploads/2020/05/Classroom-Management-for-an-Effective-Learning-Environment-768x512.jpg",
         "lat":8.359668145145045,
-        "lng":124.86917291967444
+        "lng":124.86917291967444,
+         "locationType":"Other"
     }
 ]
